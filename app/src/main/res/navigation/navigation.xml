@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/straightFragment">
+
+    <fragment
+        android:id="@+id/complexFragment"
+        android:name="rq.myapplication.fragment.ComplexFragment"
+        android:label="complex"
+        tools:layout="@layout/fragment_complex" />
+    <fragment
+        android:id="@+id/curveFragment"
+        android:name="rq.myapplication.fragment.CurveFragment"
+        android:label="curve"
+        tools:layout="@layout/fragment_curve" />
+    <fragment
+        android:id="@+id/cycleFragment"
+        android:name="rq.myapplication.fragment.CycleFragment"
+        android:label="cycle"
+        tools:layout="@layout/fragment_cycle" />
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="rq.myapplication.fragment.ImageFragment"
+        android:label="image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/rotationFragment"
+        android:name="rq.myapplication.fragment.RotationFragment"
+        android:label="rotation"
+        tools:layout="@layout/fragment_rotation" />
+    <fragment
+        android:id="@+id/straightFragment"
+        android:name="rq.myapplication.fragment.StraightFragment"
+        android:label="straight"
+        tools:layout="@layout/fragment_straight" />
+    <fragment
+        android:id="@+id/swingFragment"
+        android:name="rq.myapplication.fragment.SwingFragment"
+        android:label="swing"
+        tools:layout="@layout/fragment_swing" />
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="rq.myapplication.fragment.TextFragment"
+        android:label="text"
+        tools:layout="@layout/fragment_text" />
+    <fragment
+        android:id="@+id/transitionFragment"
+        android:name="rq.myapplication.fragment.TransitionFragment"
+        android:label="transition"
+        tools:layout="@layout/fragment_transition" />
+</navigation>

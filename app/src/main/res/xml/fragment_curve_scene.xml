@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+<!--    设置贝塞尔曲线参数，作为运动轨迹-->
+    <Transition
+        motion:constraintSetEnd="@+id/vertical"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:pathMotionArc="startVertical"
+        motion:motionInterpolator="cubic(1,0,0,1)">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnClick motion:targetId="@id/view2" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            motion:layout_constraintVertical_bias="0.95"
+            android:layout_height="150dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.05"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="150dp"
+            android:id="@+id/view2" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/vertical">
+        <Constraint
+            motion:layout_constraintVertical_bias="0.05"
+            android:layout_height="150dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.95"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="150dp"
+            android:id="@+id/view2" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/horizontal"
+        motion:pathMotionArc="startHorizontal"
+        motion:motionInterpolator="linear">
+        <OnClick motion:targetId="@id/curveLayout" />
+    </Transition>
+    <ConstraintSet android:id="@+id/horizontal" >
+        <Constraint
+            motion:layout_constraintVertical_bias="0.05"
+            android:layout_height="150dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.95"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="150dp"
+            android:id="@+id/view2" />
+    </ConstraintSet>
+</MotionScene>
