@@ -3,10 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
+<!--    使用贝塞尔曲线控制移动的速度-->
     <Transition
         motion:constraintSetEnd="@+id/left"
         motion:constraintSetStart="@id/start"
-        motion:duration="500">
+        motion:duration="3000"
+        motion:motionInterpolator="cubic(1,0,0,1)">
        <KeyFrameSet>
        </KeyFrameSet>
         <OnClick motion:targetId="@id/viewLeft" />

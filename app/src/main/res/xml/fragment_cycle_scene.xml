@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <!-- TODO:  jumpToStart 属性设置无效，需要修复 -->
+    <Transition
+        motion:constraintSetEnd="@+id/sine"
+        motion:constraintSetStart="@id/start"
+        motion:duration="3000"
+        motion:motionInterpolator="easeInOut"
+        motion:autoTransition="jumpToStart">
+
+<!--使用关键帧设置振荡图形-->
+       <KeyFrameSet>
+           <KeyCycle
+               motion:motionTarget="@+id/view"
+               motion:framePosition="100"
+               motion:wavePeriod="1.5"
+               android:translationX="150dp"
+               motion:waveOffset="0dp" />
+       </KeyFrameSet>
+        <OnClick motion:targetId="@id/viewSine" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/sine">
+        <Constraint
+            android:layout_height="120dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="120dp"
+            android:id="@+id/view" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/bounce" >
+        <Constraint
+            android:layout_height="120dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="120dp"
+            android:id="@+id/view" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/bounce"
+        motion:duration="3000"
+        motion:autoTransition="jumpToStart">
+
+        <KeyFrameSet >
+            <KeyCycle
+                motion:motionTarget="@+id/view"
+                motion:framePosition="100"
+                motion:wavePeriod="1"
+                motion:waveShape="bounce"
+                android:translationX="150dp"
+                motion:waveOffset="0dp" />
+        </KeyFrameSet>
+
+        <OnClick motion:targetId="@id/viewBounce" />
+    </Transition>
+</MotionScene>
