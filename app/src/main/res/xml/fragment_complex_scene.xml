@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+<!--    设置 staggered 不同速度的交错运动-->
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:staggered="0.3"
+        motion:autoTransition="jumpToStart">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnClick motion:targetId="@id/complexMotionLayout" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            motion:layout_constraintVertical_bias="0.06"
+            android:layout_height="120dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.116"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="120dp"
+            android:id="@+id/view2" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.06"
+            android:layout_height="120dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.845"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="120dp"
+            android:id="@+id/view1" />
+    </ConstraintSet>
+</MotionScene>
